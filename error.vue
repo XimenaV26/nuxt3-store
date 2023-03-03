@@ -1,0 +1,23 @@
+<template>
+  <div class="mt-7 max-w-sm mx-auto text-center card">
+    <p class="mt-7 text-7xl font-bold">{{ error.statusCode }}</p>
+    <p class="mt-7 text-6xl">Ooopsi</p>
+    <p class="mt-7">{{ error.message }}</p>
+    <button class="btn my-7" @click="handleClearError">Go Home</button>
+  </div>
+</template>
+
+<script setup lang="ts">
+defineProps(["error"]);
+
+const handleClearError = () => clearError({ redirect: "/" });
+</script>
+
+<style scoped>
+.btn {
+  background-color: rgb(99, 178, 178);
+  height: 50px;
+  color: white;
+  border-radius: 5px;
+}
+</style>
